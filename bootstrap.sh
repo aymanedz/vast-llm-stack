@@ -33,3 +33,6 @@ docker exec ollama ollama pull deepseek-r1:7b || true
 docker exec ollama ollama pull qwen2.5-vl || true
 
 echo "✅ جاهز. افتح المتصفح على: http://<IP>:3000"
+# تشغيل المزامنة مع Cloudflare R2
+chmod +x /workspace/vast-llm-stack/sync.sh
+nohup bash /workspace/vast-llm-stack/sync.sh > /workspace/sync.log 2>&1 &
